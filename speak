@@ -1,0 +1,7 @@
+#!/bin/bash
+. /show/isConnected
+if [ $isConnected -eq 1 ];then
+	/do/tts/googleSpeak "$@"
+else
+	/do/tts/espeak "$@"
+fi

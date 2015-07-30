@@ -8,7 +8,13 @@ speed=130
 #while in command line it works great
 #I search for encoding problems but I haven't found any solution
 
+if [ $# -eq 1 ];then
+	text=$lang
+	lang="en"
+fi
+
 if [ -z "$lang" ];then
+	text=$lang
 	lang="en"
 fi
 
@@ -24,4 +30,5 @@ if [ $lang = "fr" ]
 	text=$(echo "$text" |sed "s/ù/u/g")
 fi
 #echo $text > /tmp/log
+/show/listecho "Say $text with Espeak" $OK
 /usr/bin/espeak -p $pitch -s $speed -v $lang "$text" --stdout|aplay

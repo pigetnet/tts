@@ -1,0 +1,4 @@
+#!/bin/bash
+/do/tts/espeakInstall
+/do/tts/googleSpeakInstall
+
